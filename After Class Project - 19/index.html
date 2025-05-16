@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>After Class Project - 19</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    </head>
+    <body>
+      <header>
+            <h2 class="logo">ACP 19</h2>
+            <nav class="navigation">
+                <a href="#">Home</a>
+                <a href="#">Products</a>
+                <a href="#">Category</a>
+                <a href="#">Class</a>
+                <button class="btnLogin-popup">Dashboard</button>
+            </nav>
+      </header>
+    </body>  
+  <style>
+    body {
+      background-color: #add8e6; /* Light blue background for a fun feel */
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 50px;
+    }
+
+    .calculator-box {
+      background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+      border-radius: 15px;
+      padding: 30px;
+      width: 300px;
+      margin: auto;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    input, select, button {
+      font-size: 16px;
+      margin: 10px 0;
+      padding: 5px;
+      width: 80%;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    h2 {
+      color: #000080;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="calculator-box">
+    <h1>Simple Calculator</h1>
+
+    <label>Number 1:</label><br>
+    <input type="number" id="num1"><br>
+
+    <label>Number 2:</label><br>
+    <input type="number" id="num2"><br>
+
+    <label>Operation:</label><br>
+    <select id="operator">
+      <option value="+">Add (+)</option>
+      <option value="-">Subtract (-)</option>
+      <option value="*">Multiply (*)</option>
+      <option value="/">Divide (/)</option>
+    </select><br>
+
+    <button onclick="calculate()">Calculate</button><br><br>
+
+    <h2>Result: <span id="result">?</span></h2>
+  </div>
+
+  <script>
+    function calculate() {
+      var number1 = parseFloat(document.getElementById("num1").value);
+      var number2 = parseFloat(document.getElementById("num2").value);
+      var operator = document.getElementById("operator").value;
+      var result;
+
+      if (operator === "+") {
+        result = number1 + number2;
+      } else if (operator === "-") {
+        result = number1 - number2;
+      } else if (operator === "*") {
+        result = number1 * number2;
+      } else if (operator === "/") {
+        result = number1 / number2;
+      }
+
+      document.getElementById("result").textContent = result;
+    }
+  </script>
+
+</html>
